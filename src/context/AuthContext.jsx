@@ -17,10 +17,24 @@ export function AuthProvider({ children }) {
 
   const login = async (email, password) => {
     // Aquí iría tu llamada real al backend
+    // const response = await fetch('https://tu-api.com/auth/login', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ email, password }),
+    // });
+
+    // if (!response.ok) throw new Error('Credenciales incorrectas');
+
+    // const data = await response.json(); // { token, user }
+    // localStorage.setItem('token', data.token);
+    // localStorage.setItem('user', JSON.stringify(data.user));
+    // setUser(data.user);
+    // return data.user;
+
     // Por ahora simulamos una validación
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        if (email === 'admin@test.com' && password === '123456') {
+        if (email === 'admin@test.com' && password === 'admin123') {
           const userData = { id: 1, name: 'Admin', email, role: 'admin' };
           setUser(userData);
           localStorage.setItem('user', JSON.stringify(userData));
